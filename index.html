@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>doList - Simplify Your Life with Our Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">doList</div>
+        <ul class="nav-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#options">More Option</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons" id="authButtons">
+          <button class="btn btn-outline" id="loginBtn">Log In</button>
+          <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+        </div>
+        <div class="user-menu" id="userMenu">
+          <div class="user-info">
+            <span id="userGreeting">Welcome, User!</span>
+          </div>
+          <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Simplify Your Life with Our Todo App</h1>
+        <p>
+          Stay organized and boost your productivity with our intuitive todo
+          website. Experience a modern approach to task management that fits
+          your lifestyle.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="getStartedBtn">
+            Get started
+          </button>
+          <button class="btn btn-outline">Learn more</button>
+        </div>
+      </section>
+
+      <section class="main-content">
+        <div class="content-card">
+          <h2>Organize.<br />Achieve.<br />Relax.</h2>
+          <p>
+            Turn clutter into clarity, chaos into control, and dreams into done
+            bold visions into market success
+          </p>
+          <div class="card-buttons">
+            <button class="btn btn-white" id="getStartedTodayBtn">
+              Get Started Today
+            </button>
+            <button class="btn btn-transparent">Discover Features</button>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-content">
+            <h3>Your Tasks.<br />Our Tools.</h3>
+            <p>
+              Freddie Halvorson<br /><small>App Productivity Enthusiast</small>
+            </p>
+          </div>
+          <div class="play-button">▶</div>
+        </div>
+      </section>
+
+      <section class="social-proof">
+        <div class="social-icons">
+          <span>Google</span>
+          <span>facebook</span>
+          <span>YouTube</span>
+          <span>Pinterest</span>
+          <span>Twitch</span>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <h2>
+          Transform Your Productivity with Our Innovative To-Do List Features
+        </h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>User-Friendly Interface</h3>
+            <p>
+              Our platform offers seamless task management to boost your
+              efficiency
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✈️</div>
+            <h3>Collaborate & Share Effortlessly</h3>
+            <p>
+              Invite team members to work together and achieve your goals faster
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Effortless Collaboration</h3>
+            <p>
+              Invite team members to work together and achieve your goals faster
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Seamless Access</h3>
+            <p>Stay connected and manage your tasks on the go with ease</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2>Customer Testimonials</h2>
+        <p class="testimonials-subtitle">
+          This tool has transformed my productivity and organization!
+        </p>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Using this website has made my tasks so much easier! I can't
+            imagine my day without it."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Sherri Cronin</h4>
+              <p>Project Manager, TechCorp</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop"
+            alt="Mobile App"
+            style="width: 100%; border-radius: 12px"
+          />
+        </div>
+        <div class="cta-content">
+          <h2>Start Organizing Your Life Today</h2>
+          <p>
+            Join us now and transform your productivity with our intuitive to-do
+            list platform!
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-primary" id="startOrganizingBtn">
+              Start Organizing
+            </button>
+            <button class="btn btn-outline">Learn More</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="data-section">
+        <h3>Recent Submissions</h3>
+        <div class="table-container">
+          <table id="submissionsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Submission Time</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td colspan="4" class="empty-state">
+                  No submissions yet. Be the first to get started!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div id="startOrganizingModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Start Organizing Your Life!</h2>
+          <button class="close-btn" id="closeStartOrganizingModal">
+            &times;
+          </button>
+        </div>
+        <form id="startOrganizingForm">
+          <div class="form-group">
+            <label for="orgName">Full Name</label>
+            <input
+              type="text"
+              id="orgName"
+              name="name"
+              class="form-control"
+              placeholder="Enter your full name"
+              required
+            />
+            <div class="error-message" id="orgNameError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="orgEmail">Email Address</label>
+            <input
+              type="email"
+              id="orgEmail"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email address"
+              required
+            />
+            <div class="error-message" id="orgEmailError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="orgPhone">Phone Number</label>
+            <input
+              type="tel"
+              id="orgPhone"
+              name="phone"
+              class="form-control"
+              placeholder="Enter your phone number"
+              required
+            />
+            <div class="error-message" id="orgPhoneError"></div>
+          </div>
+
+          <div class="error-message" id="startOrganizingFormError"></div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; margin-bottom: 1rem"
+            id="startOrganizingSubmitBtn"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="thankYouModal" class="modal">
+      <div class="modal-content success-modal">
+        <div class="success-icon">✔</div>
+        <h2>Thank You!</h2>
+        <p>Thank you for your interest! We'll get back to you soon.</p>
+        <button class="btn btn-primary" id="closeThankYouModal">Close</button>
+      </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Welcome Back!</h2>
+          <button class="close-btn" id="closeLoginModal">&times;</button>
+        </div>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input
+              type="email"
+              id="loginEmail"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email address"
+              required
+            />
+            <div class="error-message" id="loginEmailError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+            />
+            <div class="error-message" id="loginPasswordError"></div>
+          </div>
+
+          <div class="error-message" id="loginFormError"></div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; margin-bottom: 1rem"
+            id="loginSubmitBtn"
+          >
+            Log In
+          </button>
+
+          <div class="modal-switch">
+            Don't have an account? <a id="switchToSignup">Sign up here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Get Started Today!</h2>
+          <button class="close-btn" id="closeSignupModal">&times;</button>
+        </div>
+        <form id="signupForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                class="form-control"
+                placeholder="Enter your first name"
+                required
+              />
+              <div class="error-message" id="firstNameError"></div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="form-control"
+                placeholder="Enter your last name"
+                required
+              />
+              <div class="error-message" id="lastNameError"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="Male"
+                  required
+                />
+                <label for="male">Male</label>
+              </div>
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="Female"
+                  required
+                />
+                <label for="female">Female</label>
+              </div>
+            </div>
+            <div class="error-message" id="genderError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="language">Language</label>
+            <div class="radio-group">
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  id="english"
+                  name="language"
+                  value="English"
+                  required
+                />
+                <label for="english">English</label>
+              </div>
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  id="hindi"
+                  name="language"
+                  value="Hindi"
+                  required
+                />
+                <label for="hindi">Hindi</label>
+              </div>
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  id="marathi"
+                  name="language"
+                  value="Marathi"
+                  required
+                />
+                <label for="marathi">Marathi</label>
+              </div>
+            </div>
+            <div class="error-message" id="languageError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email address"
+              required
+            />
+            <div class="error-message" id="emailError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Create your password"
+              required
+            />
+            <div class="error-message" id="passwordError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              class="form-control"
+              placeholder="Confirm your password"
+              required
+            />
+            <div class="error-message" id="confirmPasswordError"></div>
+          </div>
+
+          <div class="checkbox-group form-group">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              value="accepted"
+              required
+            />
+            <label for="terms"
+              >I agree to the <a href="#">Terms and Conditions</a></label
+            >
+            <div class="error-message" id="termsError"></div>
+          </div>
+
+          <div class="error-message" id="signupFormError"></div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; margin-bottom: 1rem"
+            id="signupSubmitBtn"
+          >
+            Sign Up
+          </button>
+
+          <div class="modal-switch">
+            Already have an account? <a id="switchToLogin">Log in here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>doList</h3>
+          <p>Simplify Your Life</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#options">More Option</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 doList. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
